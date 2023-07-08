@@ -87,7 +87,6 @@ function getActivities() {
       });
     }
     
-    // Función para descargar las notas en un archivo de texto
     function downloadNotes() {
       const activities = JSON.parse(localStorage.getItem('activities')) || [];
       
@@ -103,17 +102,14 @@ function getActivities() {
       downloadLink.click();
     }
     
-    // Manejador de evento para el formulario
     document.getElementById('activityForm').addEventListener('submit', function(event) {
       event.preventDefault();
       const activityName = document.getElementById('activityName').value;
       addActivity(activityName);
     });
     
-    // Manejador de evento para el botón de descarga de notas
     document.getElementById('downloadButton').addEventListener('click', function() {
       downloadNotes();
     });
     
-    // Obtener las actividades almacenadas al cargar la página
     getActivities();
